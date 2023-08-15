@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/eb75260fb3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+    integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+    integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>OBB Radio</title>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body>
+  <section class="top_nav">
+    <div class="left">
+      <small>Follow Us On</small>
+      <hr style="width: 80px; border-top: 2px solid darkgray;">
+      <div>
+        <a class="fa-brands fa-instagram"></a>
+        <a class="fa-brands fa-facebook"></a>
+        <a class="fa-brands fa-twitter"></a>
+        <a class="fa-brands fa-tiktok"></a>
+      </div>
+    </div>
+
+    <div class="player">
+      <p>
+        <span>Sunday Jams</span>
+        <small>8:00 - 10:00</small>
+      </p>
+      <button class="material-symbols-outlined">play_arrow</button>
+    </div>
+
+    <div class="right">
+      <input type="text" placeholder="Search">
+      <i class="material-symbols-outlined">search</i>
+    </div>
+
+  </section>
+  <style>
+    .top_nav{
+      width: 66%;
+      padding: 0.4rem 2%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 0 0 10px 10px;
+      color: white;
+      background: #263b88;
+    }
+    .top_nav .left{
+      display: flex;
+      gap: 0.2rem 0;
+      flex-direction: column;
+    }
+    .top_nav .left div{
+      display: flex;
+      align-items: center;
+      gap: 0 0.5rem;
+    }
+    .top_nav .left a{
+      font-size: 1.6rem;
+      color: white;
+    }
+    .top_nav .player{
+      display: flex;
+      gap: 0 0.8rem;
+      border: 1px solid white;
+      background: white;
+      padding: 0 15px;
+      border-radius: 10px;
+      align-items: center;
+      color: #243c87;
+    }
+    .top_nav .player p{
+      display: flex;
+      flex-direction: column;
+    }
+    .top_nav .player button{
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+    }
+    .top_nav .right{
+      display: flex;
+      align-items: center;
+      gap: 0 1rem;
+    }
+    .top_nav .right input{
+      width: 170px;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+  </style>
+  <section class="page">
+    <section class="sideBar">
+      <header>
+        <img src="images/logo_2.png">
+      </header>
+      <nav>
+        <a href=""> <i class="material-symbols-outlined">breaking_news</i> <span>News Feed</span> </a>
+        <a href=""> <i class="material-symbols-outlined">gavel</i> <span>Politics</span> </a>
+        <a href=""> <i class="material-symbols-outlined">payments</i> <span>Business</span> </a>
+        <a href=""> <i class="material-symbols-outlined">sentiment_satisfied</i> <span>Entertainment</span> </a>
+        <a href=""> <i class="material-symbols-outlined">sports_soccer</i> <span>Sports</span> </a>
+        <a href=""> <i class="material-symbols-outlined">usb</i> <span>Technology</span> </a>
+        <a href=""> <i class="material-symbols-outlined">topic</i> <span>Opinion</span> </a>
+        <a href=""> <i class="material-symbols-outlined">nightlife</i> <span>Lifestyle</span> </a>
+        <a href=""> <i class="material-symbols-outlined">image</i> <span>Gallery</span> </a>
+        <a href=""> <i class="material-symbols-outlined">deceased</i> <span>Obituary</span> </a>
+      </nav>
+      <footer>
+        <a href=""><i class="fa-brands fa-google"></i> <span>Google Podcast</span> </a>
+        <a href=""><i class="fa-brands fa-itunes"></i> <span>iTunes</span> </a>
+        <a href=""><i class="fa-brands fa-spotify"></i> <span>Spotify</span> </a>
+      </footer>
+    </section>
+    <section class="main">
+      <section class="top_swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="" style="background-image: url(images/Henry-Quartey-1024x544.jpg);">
+              <p>Henry Quartey fumes over filth in Accra; calls out MMDCEs</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="" style="background-image: url(images/image-255-1024x559.png);">
+              <p>Foreign Affairs Minister fumes, sacks overstaying officers at Passport Office over suspected extortion
+              </p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a style="background-image: url(images/CHALE-CHALE-1.png);">
+              <p>Joy Prime, Joy FM and other MGL platforms partner Chale Wote Festival 2023</p>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a style="background-image: url(images/Colleges-of-Education.jpeg);">
+              <p>CETAG strike: Salaries can be withheld if strike is illegal – NLC clarifies</p>
+            </a>
+          </div>
+        </div>
+
+        <button class="material-symbols-outlined top_swiper_prev">chevron_left</button>
+        <button class="material-symbols-outlined top_swiper_next">chevron_right</button>
+      </section>
+
+      <style>
+        .top_swiper {
+          width: 80%;
+          padding: 0 20% 0 0;
+          display: flex;
+          align-items: center;
+          min-height: 280px;
+        }
+        .top_swiper button{
+          position: absolute;
+          z-index: 100;
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          font-weight: 600;
+          font-size: 2rem;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          transition: 0.4s ease;
+        }
+        .top_swiper_prev{
+          left: -100px;
+        }
+        .top_swiper_next{
+          right: -100px;
+        }
+        .top_swiper_prev.change{
+          left: 10px;
+        }
+        .top_swiper_next.change{
+          right: 10px;
+        }
+
+        .top_swiper .swiper-slide a {
+          width: 220px;
+          background-position: center;
+          background-size: cover;
+          height: 280px;
+          display: flex;
+          align-items: flex-end;
+          position: relative;
+          border-radius: 15px;
+          overflow: hidden;
+        }
+        .top_swiper .swiper-slide a img{
+          width: 100%;
+          top: 0;
+          left: 0;
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          border-radius: 15px;
+          transition: 0.5s ease;
+        }
+
+        .top_swiper .swiper-slide a p {
+          width: 80%;
+          border-radius: 0 0 15px 15px;
+          font-size: 0.9rem;
+          background: rgba(0, 0, 0, 0.724);
+          padding: 10px 10%;
+          z-index: 20;
+          transition: 0.4s ease;
+          color: white;
+        }
+        .top_swiper .swiper-slide a:hover p{
+          color: wheat;
+        }
+        /* .top_swiper .swiper-slide a:hover p{
+          height: 85%;
+          padding: 10% 10%;
+        } */
+      </style>
+      <script>
+        const top_swiper_next = document.querySelector('.top_swiper_next')
+        const top_swiper_prev = document.querySelector('.top_swiper_prev')
+
+
+        // window.onresize =()=>{
+        //   var min = window.innerWidth
+        //   makeTopSwiper(min)
+        // }
+        // window.onload =()=>{
+        //   var min = window.innerWidth
+        //   makeTopSwiper()
+        // }
+
+        const makeTopSwiper =(min)=>{
+          var top_swiper = new Swiper('.top_swiper', {
+            loop: false,
+            slidesPerView: 2,
+            spaceBetween: 20,
+            navigation : {
+              nextEl : top_swiper_next,
+              prevEl : top_swiper_prev
+            }
+          })
+        }
+        makeTopSwiper()
+
+
+      </script>
+
+      <script>
+        
+
+        document.querySelector('.top_swiper').onmouseenter =()=>{
+          top_swiper_next.classList.add('change')
+          top_swiper_prev.classList.add('change')
+        }
+        document.querySelector('.top_swiper').onmouseleave =()=>{
+          top_swiper_next.classList.remove('change')
+          top_swiper_prev.classList.remove('change')
+        }
+      </script>
+
+      <section class="news_box">
+        <section href="" class="news">
+          <p>
+            <span>29 mins ago</span>
+            <span>
+              <i class="material-symbols-outlined">payments</i>
+              Business
+            </span>
+          </p>
+          <h3>
+            Don’t compromise on
+            Don’t compromise on your career aspirations and dreams – Wellness coach to singles
+            Don’t compromise on your career aspirations and dreams – Wellness coach to singles
+          </h3>
+          <div class="tag_box">
+            <small>Business</small>
+            <small>Stocks</small>
+            <small>Insider</small>
+          </div>
+          <div class="img_box">
+            <img src="images/image-263.png" alt="">
+            <small style="color: rgb(107, 107, 107);">Source : Kwame Dadzie</small>
+            <p style="color: black;">
+              The Minister of Tourism, Arts and Culture, Mohammed Awal has announced that the government will be
+              launching a project to solicit novel tourism ideas from young people.
+            </p>
+            <nav>
+              <a href="view_news.html" class="fa-brands fa-facebook-f"></a>
+              <a class="fa-brands fa-twitter"></a>
+              <a class="fa-brands fa-whatsapp"></a>
+              <a class="fa-brands fa-linkedin"></a>
+              <a class="fa-brands fa-google"></a>
+            </nav>
+          </div>
+        </section>
+      </section>
+
+      <script>
+        document.querySelector('.news').onclick = () => {
+          window.location.href = 'view_news.html'
+        }
+
+        for (var i = 0; i < 9; i++) {
+          document.querySelector('.news_box').appendChild(document.querySelector('.news').cloneNode(true))
+        }
+      </script>
+
+      <style>
+        .news_box {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem 0;
+        }
+
+        .news {
+          display: flex;
+          width: 95%;
+          flex-direction: column;
+          gap: 0.5rem 0;
+          color: black;
+          border: 1px solid darkgray;
+          padding: 1rem 2.5%;
+          cursor: pointer;
+          border-radius: 0 0 20px 20px;
+          border-radius: 20px;
+          transition: 0.4s ease;
+        }
+
+        .news:hover {
+          background: rgb(232, 232, 232);
+        }
+
+        .news p {
+          width: 100%;
+          color: rgb(88, 88, 88);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .news p span {
+          display: flex;
+          align-items: center;
+          gap: 0 0.5rem;
+        }
+
+        .news h3 {
+          max-height: 60px;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          display: -webkit-box;
+          font-weight: 400;
+          font-size: 1.2rem;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+        }
+
+        .news .tag_box {
+          color: rgb(107, 107, 107);
+          display: flex;
+          gap: 0 10px;
+        }
+
+        .news .img_box {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem 0;
+          border-radius: 20px;
+          width: 100%;
+        }
+
+        .news .img_box img {
+          width: 100%;
+          height: 300px;
+          aspect-ratio: 4/3;
+          border-radius: 5px;
+          object-fit: cover;
+        }
+
+        .news .img_box small,
+        .news .img_box p {
+          width: 95%;
+          padding: 0 2.5%;
+        }
+
+        .news nav {
+          display: flex;
+          margin: 0.5rem 0;
+          justify-content: space-around;
+        }
+
+        .news nav a {
+          font-size: 1.3rem;
+          color: rgb(123, 123, 123);
+        }
+      </style>
+
+    </section>
+    <section class="panel">
+      <section class="players">
+        <section class="player_box">
+          <img src="images/dj-wallpaper-the-vibe-mix-4.jpg" alt="">
+
+          <nav>
+            <p><i class="material-symbols-outlined">radio</i> <span>Sunday Jams</span></p>
+            <p><i class="material-symbols-outlined">timer</i> <span>6:00 - 8:00</span></p>
+            <button class="material-symbols-outlined">play_arrow</button>
+          </nav>
+
+          <div class="bars">
+            <small></small>
+            <small></small>
+            <small></small>
+            <small></small>
+          </div>
+        </section>
+
+        <section class="player_box">
+          <h4>Up Next</h4>
+          <img src="images/dj-wallpaper-wedding-songs-mp3.jpg" alt="">
+          <nav>
+            <p><i class="material-symbols-outlined">radio</i> <span>Sunday Jams</span></p>
+            <p><i class="material-symbols-outlined">timer</i> <span>8:00 - 12:00</span></p>
+          </nav>
+        </section>
+      </section>
+
+    </section>
+
+    <style>
+      .players{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem 0;
+      }
+      .player_box {
+        width: 90%;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid darkgray;
+        position: relative;
+      }
+
+      .player_box img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .player_box nav {
+        width: 90%;
+        padding: 5px 5%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem 0;
+        align-items: flex-start;
+      }
+
+      .player_box nav p {
+        display: flex;
+        align-items: center;
+        gap: 0 0.5rem;
+      }
+
+      .player_box nav button {
+        width: 35px;
+        height: 35px;
+        font-size: 2rem;
+      }
+
+      .player_box .bars {
+        position: absolute;
+        display: flex;
+        bottom: 10px;
+        right: 10px;
+        gap: 0 1px;
+      }
+
+      .player_box .bars small {
+        display: block;
+        height: 25px;
+        width: 5px;
+        border-radius: 100px;
+        background: #243c87;
+      }
+
+      .player_box h4 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: black;
+        color: white;
+        padding: 3px 10px;
+        border-radius: 5px 0;
+        font-weight: 400;
+      }
+    </style>
+  </section>
+</body>
+
+</html>
+
+<style>
+  .page {
+    display: flex;
+    width: 70%;
+    padding: 2vh 0;
+    gap: 0 1%;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* border: 2px solid black; */
+  }
+
+  @media all and (max-width:1660px) {
+    .page{
+      width: 80%;
+    }
+    .top_nav{
+      width: 76%;
+    }
+  }
+  /* @media all and (max-width:1550px) {
+    .page{
+      width: 90%;
+    }
+    .top_nav{
+      width: 86%;
+    }
+  } */
+
+  .sideBar {
+    width: 19%;
+    display: flex;
+    gap: 2rem 0;
+    flex-direction: column;
+    padding: 3vh 0;
+    align-items: center;
+    /* border: 1px solid lightgray; */
+    border-radius: 20px;
+  }
+
+  .sideBar header img {
+    width: 150px;
+  }
+
+  .sideBar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem 0;
+  }
+
+  .sideBar nav a,
+  .sideBar footer a {
+    display: flex;
+    font-size: 1.1rem;
+    align-items: center;
+    color: black;
+    gap: 0 0.5rem;
+  }
+
+  .sideBar footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem 0;
+  }
+
+  .main {
+    width: 43%;
+    padding: 3vh 3%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem 0;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+  }
+
+  .panel {
+    width: 25%;
+    border-radius: 20px;
+    padding: 3vh 2%;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem 0;
+  }
+</style>
+
+
+<script>
+  document.querySelectorAll('.sideBar a').forEach((el, i) => {
+    anime({
+      targets: el,
+      translateY: [-20, 0],
+      opacity: [0, 1],
+      delay: i * 50
+    })
+  })
+</script>

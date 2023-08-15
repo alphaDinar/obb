@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Commissioner&family=Martel+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Plus Jakarta Sans', sans-serif; */
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* --var-bg: #2f2f2f; */
+  /* --var-theme: #ea5e21; */
+  --var-color: white;
+}
+
+.page {
+  position: relative;
+
+  margin: auto;
+}
+
+body {
+  background: var(--var-bg);
+}
+
+div::-webkit-scrollbar,
+section::-webkit-scrollbar {
+  height: 10px;
+  background: darkgray;
+  cursor: pointer;
+  border-radius: 100px;
+  width: 10px;
+}
+
+section::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 100px;
+}
