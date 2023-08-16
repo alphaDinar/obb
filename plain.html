@@ -12,12 +12,24 @@
   <section class="page">
 
   </section>
+  <script>
+    function setContainerHeight() {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    // Call the function initially
+    setContainerHeight();
+
+    // Update the height on window resize
+    window.addEventListener('resize', setContainerHeight);
+  </script>
   <style>
     * {
-      margin: 0 !important;
-      padding: 0 !important;
-      border: none !important;
-      outline: none !important;
+      margin: 0;
+      padding: 0;
+      border: none;
+      outline: none;
       text-decoration: none;
       font-family: 'Poppins', sans-serif;
       /* font-family: 'Plus Jakarta Sans', sans-serif; */
@@ -25,13 +37,14 @@
     }
 
     .page {
-      margin: 0 !important;
-      padding: 0 !important;
       background: salmon;
       width: 100%;
-      height: 95vh;
+      height: calc(var(--vh, 1vh) * 100 - (env(safe-area-inset-top) + env(safe-area-inset-bottom)));
+      overflow-y: auto;
     }
   </style>
+
+
 
 </body>
 
