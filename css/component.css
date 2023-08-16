@@ -159,7 +159,7 @@
 .ad {
   width: 400px;
   height: 250px;
-  background-image: url(/images/ad.jpg);
+  background-image: url(../images/ad.jpg);
   background-position: center;
   background-size: cover;
 }
