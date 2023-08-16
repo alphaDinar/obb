@@ -21,7 +21,6 @@
     const setMaxHeight = () => {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
-      console.log(vh)
     }
     setMaxHeight();
 
@@ -38,7 +37,7 @@
 
 <body>
   <section class="top_nav">
-    <button class="material-symbols-outlined" onclick="toggleSideBar()">menu</button>
+    <button class="material-symbols-outlined" style="cursor: pointer;" onclick="toggleSideBar()">menu</button>
 
     <div class="left">
       <small>Follow Us On</small>
@@ -348,7 +347,7 @@
             <small>Insider</small>
           </div>
           <div class="img_box">
-            <img src="images/1-13.jpg" alt="">
+            <video src="images/vid_test.mp4" controls muted></video>
             <small style="color: rgb(107, 107, 107);">Source : Kwame Dadzie</small>
             <p style="color: black;">
               The Minister of Tourism, Arts and Culture, Mohammed Awal has announced that the government will be
@@ -433,7 +432,7 @@
           width: 100%;
         }
 
-        .news .img_box img {
+        .news .img_box img, .news .img_box video {
           width: 100%;
         }
 
@@ -569,7 +568,7 @@
       }
     </style>
 
-    <button id="playlist" class="material-symbols-outlined" onclick="togglePanel()">queue_music</button>
+    <button id="playlist" class="material-symbols-outlined" style="cursor: pointer;" onclick="togglePanel()">queue_music</button>
 
     <style>
       #playlist {
@@ -598,6 +597,18 @@
   for (var i = 0; i < 9; i++) {
     document.querySelector('.news_box').appendChild(document.querySelector('.news').cloneNode(true))
   }
+
+
+  document.querySelectorAll('.news video').forEach((el,i)=>{
+    el.onplay =()=>{
+      document.querySelectorAll('.news video').forEach((bel,ii)=>{
+        if(i != ii){
+          bel.pause()
+        }
+      })
+    }
+  })
+
 
 
   const sideBar = document.querySelector('.sideBar')
@@ -677,6 +688,7 @@
     border-radius: 20px;
     padding: 3vh 2%;
     border: 1px solid lightgray;
+    transition: 0.4s ease;
     display: flex;
     flex-direction: column;
     gap: 2rem 0;
@@ -753,6 +765,12 @@
       border-radius: 0 15px 15px 0;
       padding: 3vh 20px;
     }
+    .sideBar header{
+      padding: 10px;
+      background: white;
+      border-radius: 100px;
+      border: 1px solid white;
+    }
 
     .sideBar.change {
       left: 0;
@@ -779,30 +797,32 @@
 
     .panel {
       position: fixed;
-      height: calc(80vh - 100px);
-      background: white;
+      max-height: calc(100vh - 100px);
       overflow-y: auto;
       background-color: #243c87;
       border-radius: 0 15px 15px 0;
       z-index: 1000;
       left: 0;
+      border: none;
       width: 220px;
       padding: 3vh 20px;
       left: -270px;
+    }
+    .panel.change{
+      left: 0;
     }
 
     .panel .player_box {
       background: white;
     }
-  }
-
-  @media all and (max-width:650px) {
     #playlist {
       display: flex;
       align-items: center;
       justify-content: center;
     }
+  }
 
+  @media all and (max-width:650px) {
     .top_nav {
       bottom: 5px;
       width: 90%;
@@ -849,7 +869,6 @@
       top: revert;
       bottom: 70px;
       transition: 0.5s ease;
-      border: none;
       border-radius: 10px;
     }
 
