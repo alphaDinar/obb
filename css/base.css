@@ -45,3 +45,17 @@ section::-webkit-scrollbar-thumb {
   background: lightgray;
   border-radius: 100px;
 }
+
+@media all and (max-width:650px) {
+
+  div::-webkit-scrollbar,
+  section::-webkit-scrollbar {
+    background: transparent;
+    width: 5px;
+  }
+
+  section::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 100px;
+  }
+}

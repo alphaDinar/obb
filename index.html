@@ -63,6 +63,8 @@
 
     .top_nav button:nth-child(1) {
       display: none;
+      background: transparent;
+      color: white;
     }
 
     .top_nav .left {
@@ -179,6 +181,8 @@
           z-index: 10 !important;
         }
 
+
+
         .top_swiper button {
           position: absolute;
           z-index: 100;
@@ -219,17 +223,6 @@
           overflow: hidden;
         }
 
-        .top_swiper .swiper-slide a img {
-          width: 100%;
-          top: 0;
-          left: 0;
-          height: 100%;
-          object-fit: cover;
-          position: absolute;
-          border-radius: 15px;
-          transition: 0.5s ease;
-        }
-
         .top_swiper .swiper-slide a p {
           width: 80%;
           border-radius: 0 0 15px 15px;
@@ -245,19 +238,53 @@
           color: wheat;
         }
 
-        /* .top_swiper .swiper-slide a:hover p{
-          height: 85%;
-          padding: 10% 10%;
-        } */
+        @media all and (max-width:600px) {
+          .top_swiper {
+            min-height: 250px;
+            width: 100%;
+            padding: 0;
+          }
+
+          .top_swiper .swiper-slide {
+            display: flex;
+            justify-content: center;
+          }
+
+          .top_swiper_prev {
+            left: 10px;
+          }
+
+          .top_swiper_next {
+            right: 10px;
+          }
+          .top_swiper .swiper-slide a{
+            height: 250px;
+          }
+        }
       </style>
       <script>
         const top_swiper_next = document.querySelector('.top_swiper_next')
         const top_swiper_prev = document.querySelector('.top_swiper_prev')
 
+        window.onload = () => {
+          var min = window.innerWidth
+          makeTopSwiper(min)
+        }
+        window.onresize = () => {
+          var min = window.innerWidth
+          makeTopSwiper(min)
+        }
+
         const makeTopSwiper = (min) => {
+          if (min < 601) {
+            slideNum = 2
+          } else {
+            slideNum = 2
+          }
+
           var top_swiper = new Swiper('.top_swiper', {
             loop: false,
-            slidesPerView: 2,
+            slidesPerView: slideNum,
             spaceBetween: 20,
             navigation: {
               nextEl: top_swiper_next,
@@ -736,14 +763,48 @@
   @media all and (max-width:650px) {
     .top_nav {
       bottom: 0;
+      width: 90%;
+      padding: 5px 5%;
+      z-index: 2000;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .top_nav .left,
+    .top_nav .right input {
       display: none;
+    }
+
+    .top_nav .player {
+      background: transparent;
+      color: white;
+      border: none;
+      border-radius: 0;
+      border-right: 1px solid white;
+      border-left: 1px solid white;
     }
 
     .page {
       margin: 0;
       padding: 0;
-      /* background: black; */
+      height: calc(100vh - 60px);
+      overflow: auto;
       width: 100%;
+    }
+
+    .sideBar {
+      width: 80%;
+      padding: 3vh 10%;
+      height: calc(94vh - 60px);
+      left: 0;
+      top: revert;
+      bottom: -100%;
+      transition: 0.5s ease;
+      border-radius: 0;
+    }
+
+    .sideBar.change {
+      left: 0;
+      bottom: 60px;
     }
 
     .main {
@@ -786,6 +847,7 @@
 
   @media all and (max-width:450px) {
     .news {
+      width: 95%;
       padding: 0.5rem 2.5%;
     }
 
@@ -803,7 +865,6 @@
 
     .news nav a {
       font-size: 1.2rem;
-      color: salmon;
     }
   }
 </style>
