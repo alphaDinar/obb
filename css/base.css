@@ -17,19 +17,12 @@
 }
 
 :root {
-  /* --var-bg: #2f2f2f; */
-  /* --var-theme: #ea5e21; */
   --var-color: white;
 }
 
 .page {
   position: relative;
   margin: auto;
-}
-
-body {
-  height: 100vh;
-  background: var(--var-bg);
 }
 
 div::-webkit-scrollbar,
