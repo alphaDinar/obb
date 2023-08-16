@@ -364,21 +364,7 @@
         </section>
       </section>
 
-      <script>
-        document.querySelector('.news').onclick = () => {
-          window.location.href = 'view_news.html'
-        }
 
-        for (var i = 0; i < 9; i++) {
-          document.querySelector('.news_box').appendChild(document.querySelector('.news').cloneNode(true))
-        }
-
-
-        const sideBar = document.querySelector('.sideBar')
-        const toggleSideBar = () => {
-          sideBar.classList.toggle('change')
-        }
-      </script>
 
       <style>
         .news_box {
@@ -475,8 +461,6 @@
         const news_box = document.querySelector('.news_box');
         [...news_box.children].forEach((el, i) => {
           if ((i + 1) % 2 === 1) {
-            // var test_ad = el.cloneNode(true)
-            // test_ad.style.background = 'salmon'
             var test_ad = document.createElement('section')
             test_ad.classList.add('ad')
             var parentBox = el.parentNode
@@ -509,6 +493,7 @@
             document.querySelector('.panel').appendChild(document.querySelector('.players').cloneNode(true))
           }
         </script>
+
 
         <section class="player_box">
           <h4>Up Next</h4>
@@ -593,8 +578,51 @@
         font-weight: 400;
       }
     </style>
+
+    <button id="playlist" class="material-symbols-outlined" onclick="togglePanel()">queue_music</button>
+
+    <style>
+      #playlist{
+        position: fixed;
+        bottom: 85px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        background: white;
+        border-radius: 50%;
+        background: salmon;
+        z-index: 2000;
+        color: white;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+    </style>
+
   </section>
 </body>
+
+<script>
+  document.querySelector('.news').onclick = () => {
+    window.location.href = 'view_news.html'
+  }
+
+  for (var i = 0; i < 9; i++) {
+    document.querySelector('.news_box').appendChild(document.querySelector('.news').cloneNode(true))
+  }
+
+
+  const sideBar = document.querySelector('.sideBar')
+  const panel = document.querySelector('.panel')
+
+  const toggleSideBar = () => {
+    sideBar.classList.toggle('change')
+    panel.classList.remove('change')
+  }
+
+  const togglePanel =()=>{
+    panel.classList.toggle('change')
+    sideBar.classList.remove('change')
+  }
+</script>
 
 </html>
 
@@ -810,19 +838,19 @@
       width: 100%;
     }
 
-    .sideBar {
+    .sideBar, .panel {
       width: 80%;
       padding: 3vh 7.5%;
       margin: 0 2.5%;
       height: calc(var(--screen) - 6.8vh - 70px);
-      max-height: 100vh;
       left: -100%;
       top: revert;
       bottom: 70px;
       transition: 0.5s ease;
-      border-radius: 0;
+      border: none;
       border-radius: 10px;
     }
+
     .sideBar header img{
       width: 100px;
     }
@@ -830,7 +858,7 @@
       font-size: 0.85rem;
     }
 
-    .sideBar.change {
+    .sideBar.change,.panel.change {
       left: 0;
     }
 
