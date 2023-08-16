@@ -21,6 +21,8 @@
 
 <body>
   <section class="top_nav">
+    <button class="material-symbols-outlined" onclick="toggleSideBar()">menu</button>
+
     <div class="left">
       <small>Follow Us On</small>
       <hr style="width: 80px; border-top: 2px solid darkgray;">
@@ -47,7 +49,7 @@
 
   </section>
   <style>
-    .top_nav{
+    .top_nav {
       width: 66%;
       padding: 0.4rem 2%;
       margin: auto;
@@ -58,21 +60,29 @@
       color: white;
       background: #263b88;
     }
-    .top_nav .left{
+
+    .top_nav button:nth-child(1) {
+      display: none;
+    }
+
+    .top_nav .left {
       display: flex;
       gap: 0.2rem 0;
       flex-direction: column;
     }
-    .top_nav .left div{
+
+    .top_nav .left div {
       display: flex;
       align-items: center;
       gap: 0 0.5rem;
     }
-    .top_nav .left a{
+
+    .top_nav .left a {
       font-size: 1.6rem;
       color: white;
     }
-    .top_nav .player{
+
+    .top_nav .player {
       display: flex;
       gap: 0 0.8rem;
       border: 1px solid white;
@@ -82,21 +92,25 @@
       align-items: center;
       color: #243c87;
     }
-    .top_nav .player p{
+
+    .top_nav .player p {
       display: flex;
       flex-direction: column;
     }
-    .top_nav .player button{
+
+    .top_nav .player button {
       height: 30px;
       width: 30px;
       border-radius: 50%;
     }
-    .top_nav .right{
+
+    .top_nav .right {
       display: flex;
       align-items: center;
       gap: 0 1rem;
     }
-    .top_nav .right input{
+
+    .top_nav .right input {
       width: 170px;
       padding: 5px 10px;
       border-radius: 5px;
@@ -162,8 +176,10 @@
           display: flex;
           align-items: center;
           min-height: 280px;
+          z-index: 10 !important;
         }
-        .top_swiper button{
+
+        .top_swiper button {
           position: absolute;
           z-index: 100;
           height: 40px;
@@ -174,16 +190,20 @@
           box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
           transition: 0.4s ease;
         }
-        .top_swiper_prev{
+
+        .top_swiper_prev {
           left: -100px;
         }
-        .top_swiper_next{
+
+        .top_swiper_next {
           right: -100px;
         }
-        .top_swiper_prev.change{
+
+        .top_swiper_prev.change {
           left: 10px;
         }
-        .top_swiper_next.change{
+
+        .top_swiper_next.change {
           right: 10px;
         }
 
@@ -198,7 +218,8 @@
           border-radius: 15px;
           overflow: hidden;
         }
-        .top_swiper .swiper-slide a img{
+
+        .top_swiper .swiper-slide a img {
           width: 100%;
           top: 0;
           left: 0;
@@ -219,9 +240,11 @@
           transition: 0.4s ease;
           color: white;
         }
-        .top_swiper .swiper-slide a:hover p{
+
+        .top_swiper .swiper-slide a:hover p {
           color: wheat;
         }
+
         /* .top_swiper .swiper-slide a:hover p{
           height: 85%;
           padding: 10% 10%;
@@ -231,24 +254,14 @@
         const top_swiper_next = document.querySelector('.top_swiper_next')
         const top_swiper_prev = document.querySelector('.top_swiper_prev')
 
-
-        // window.onresize =()=>{
-        //   var min = window.innerWidth
-        //   makeTopSwiper(min)
-        // }
-        // window.onload =()=>{
-        //   var min = window.innerWidth
-        //   makeTopSwiper()
-        // }
-
-        const makeTopSwiper =(min)=>{
+        const makeTopSwiper = (min) => {
           var top_swiper = new Swiper('.top_swiper', {
             loop: false,
             slidesPerView: 2,
             spaceBetween: 20,
-            navigation : {
-              nextEl : top_swiper_next,
-              prevEl : top_swiper_prev
+            navigation: {
+              nextEl: top_swiper_next,
+              prevEl: top_swiper_prev
             }
           })
         }
@@ -258,13 +271,13 @@
       </script>
 
       <script>
-        
 
-        document.querySelector('.top_swiper').onmouseenter =()=>{
+
+        document.querySelector('.top_swiper').onmouseenter = () => {
           top_swiper_next.classList.add('change')
           top_swiper_prev.classList.add('change')
         }
-        document.querySelector('.top_swiper').onmouseleave =()=>{
+        document.querySelector('.top_swiper').onmouseleave = () => {
           top_swiper_next.classList.remove('change')
           top_swiper_prev.classList.remove('change')
         }
@@ -315,6 +328,12 @@
         for (var i = 0; i < 9; i++) {
           document.querySelector('.news_box').appendChild(document.querySelector('.news').cloneNode(true))
         }
+
+
+        const sideBar = document.querySelector('.sideBar')
+        const toggleSideBar = () => {
+          sideBar.classList.toggle('change')
+        }
       </script>
 
       <style>
@@ -322,6 +341,7 @@
           width: 100%;
           display: flex;
           flex-direction: column;
+          align-items: center;
           gap: 2rem 0;
         }
 
@@ -407,7 +427,19 @@
           color: rgb(123, 123, 123);
         }
       </style>
-
+      <script>
+        const news_box = document.querySelector('.news_box');
+        [...news_box.children].forEach((el, i) => {
+          if ((i + 1) % 2 === 1) {
+            // var test_ad = el.cloneNode(true)
+            // test_ad.style.background = 'salmon'
+            var test_ad = document.createElement('section')
+            test_ad.classList.add('ad')
+            var parentBox = el.parentNode
+            parentBox.insertBefore(test_ad, el)
+          }
+        })
+      </script>
     </section>
     <section class="panel">
       <section class="players">
@@ -428,6 +460,12 @@
           </div>
         </section>
 
+        <script>
+          for (var i = 0; i < 9; i++) {
+            document.querySelector('.panel').appendChild(document.querySelector('.players').cloneNode(true))
+          }
+        </script>
+
         <section class="player_box">
           <h4>Up Next</h4>
           <img src="images/dj-wallpaper-wedding-songs-mp3.jpg" alt="">
@@ -441,12 +479,13 @@
     </section>
 
     <style>
-      .players{
+      .players {
         width: 100%;
         display: flex;
         flex-direction: column;
         gap: 1rem 0;
       }
+
       .player_box {
         width: 90%;
         width: 100%;
@@ -523,25 +562,9 @@
     gap: 0 1%;
     justify-content: space-between;
     align-items: flex-start;
-    /* border: 2px solid black; */
   }
 
-  @media all and (max-width:1660px) {
-    .page{
-      width: 80%;
-    }
-    .top_nav{
-      width: 76%;
-    }
-  }
-  /* @media all and (max-width:1550px) {
-    .page{
-      width: 90%;
-    }
-    .top_nav{
-      width: 86%;
-    }
-  } */
+
 
   .sideBar {
     width: 19%;
@@ -550,8 +573,8 @@
     flex-direction: column;
     padding: 3vh 0;
     align-items: center;
-    /* border: 1px solid lightgray; */
     border-radius: 20px;
+    transition: 0.4s ease;
   }
 
   .sideBar header img {
@@ -597,6 +620,191 @@
     display: flex;
     flex-direction: column;
     gap: 2rem 0;
+  }
+
+  .ad {
+    width: 400px;
+    height: 250px;
+    background: salmon;
+    background-image: url(images/ad.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media all and (max-width:1700px) {
+    .page {
+      width: 80%;
+    }
+
+    .top_nav {
+      width: 76%;
+    }
+
+    .main {
+      width: 48%;
+    }
+
+    .panel {
+      width: 20%;
+    }
+  }
+
+  @media all and (max-width:1400px) {
+    .page {
+      width: 90%;
+    }
+
+    .top_nav {
+      width: 86%;
+    }
+  }
+
+  @media all and (max-width:1200px) {
+    .page {
+      width: 95%;
+      padding: 7vh 0;
+    }
+
+    .top_nav {
+      width: 96%;
+      border-radius: 0;
+      height: 50px;
+      padding: 10px 2%;
+      position: fixed;
+      z-index: 1000;
+    }
+
+    .top_nav button:nth-child(1) {
+      display: flex;
+    }
+
+    .sideBar {
+      position: fixed;
+      opacity: 1;
+      background: #263b88;
+      color: white;
+      z-index: 1000;
+      width: 200px;
+      top: 80px;
+      left: -250px;
+      border-radius: 0 15px 15px 0;
+      padding: 3vh 20px;
+    }
+
+    .sideBar.change {
+      left: 0;
+    }
+
+    .sideBar nav a,
+    .sideBar footer a {
+      color: white;
+    }
+
+    .main {
+      width: 68%;
+    }
+  }
+
+  @media all and (max-width:1000px) {
+    .page {
+      justify-content: center;
+    }
+
+    .main {
+      width: 90%;
+    }
+
+    .panel {
+      position: fixed;
+      height: calc(80vh - 100px);
+      background: white;
+      overflow-y: auto;
+      background-color: #243c87;
+      border-radius: 0 15px 15px 0;
+      z-index: 1000;
+      left: 0;
+      width: 220px;
+      padding: 3vh 20px;
+      left: -270px;
+    }
+
+    .panel .player_box {
+      background: white;
+    }
+  }
+
+  @media all and (max-width:650px) {
+    .top_nav {
+      bottom: 0;
+      display: none;
+    }
+
+    .page {
+      margin: 0;
+      padding: 0;
+      /* background: black; */
+      width: 100%;
+    }
+
+    .main {
+      border: none;
+      width: 90%;
+    }
+
+    .news .img_box img {
+      height: 200px;
+    }
+  }
+
+  @media all and (max-width:550px) {
+    .news h3 {
+      font-size: 1.1rem;
+    }
+
+    .news .img_box img {
+      height: 150px;
+    }
+
+    .news .img_box p {
+      overflow: hidden;
+      max-height: 60px;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      font-size: 0.8rem;
+      color: rgb(99, 99, 99) !important;
+      -webkit-box-orient: vertical;
+    }
+
+    .ad {
+      width: 80%;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      height: auto;
+    }
+  }
+
+  @media all and (max-width:450px) {
+    .news {
+      padding: 0.5rem 2.5%;
+    }
+
+    .news h3 {
+      font-size: 0.85rem;
+    }
+
+    .news .img_box img {
+      height: 120px;
+    }
+
+    .news .img_box p {
+      display: none;
+    }
+
+    .news nav a {
+      font-size: 1.2rem;
+      color: salmon;
+    }
   }
 </style>
 
