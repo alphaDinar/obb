@@ -12,18 +12,7 @@
   <section class="page">
 
   </section>
-  <script>
-    function setContainerHeight() {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
 
-    // Call the function initially
-    setContainerHeight();
-
-    // Update the height on window resize
-    window.addEventListener('resize', setContainerHeight);
-  </script>
   <style>
     * {
       margin: 0;
@@ -32,7 +21,6 @@
       outline: none;
       text-decoration: none;
       font-family: 'Poppins', sans-serif;
-      /* font-family: 'Plus Jakarta Sans', sans-serif; */
       scroll-behavior: smooth;
     }
 

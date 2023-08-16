@@ -17,6 +17,23 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <title>OBB Radio</title>
   <link rel="stylesheet" href="css/base.css">
+  <script>
+    const setMaxHeight=()=> {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      console.log(vh)
+    }
+    setMaxHeight();
+  
+    window.addEventListener('resize', setMaxHeight);
+  </script>
+
+  <style>
+    :root{
+      --screen : calc(var(--vh, 1vh) * 100 - (env(safe-area-inset-top) + env(safe-area-inset-bottom)));
+    }
+  </style>
+
 </head>
 
 <body>
@@ -795,25 +812,24 @@
 
     .sideBar {
       width: 80%;
-      padding: 0vh 10%;
+      padding: 3vh 7.5%;
+      margin: 0 2.5%;
       /* padding: 0; */
-      height: 100vh;
+      /* height: 100vh; */
+      height: calc(var(--screen) - 6.5vh - 68px);
       max-height: 100vh;
       left: 0;
       top: revert;
       bottom: -100%;
-      z-index: 3000;
       transition: 0.5s ease;
       border-radius: 0;
+      border-radius: 10px;
     }
-    /* .sideBar header,.sideBar nav, .sideBar footer{
-      display: none;
-    } */
 
     .sideBar.change {
       left: 0;
-      bottom: 62px;
       bottom: 0;
+      bottom: 68px;
     }
 
     .main {
@@ -892,3 +908,4 @@
     })
   })
 </script>
+
