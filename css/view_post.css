@@ -1,0 +1,10 @@
+
+.news .img_box {
+  gap: 1.5vh 0;
+}
+
+@media all and (max-width:450px) {
+  .news h3 {
+    font-size: 1rem;
+  }
+}

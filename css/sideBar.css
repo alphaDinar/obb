@@ -1,0 +1,35 @@
+.sideBar {
+  width: 19%;
+  display: flex;
+  gap: 2rem 0;
+  flex-direction: column;
+  padding: 3vh 0;
+  align-items: center;
+  border-radius: 20px;
+  transition: 0.4s ease;
+}
+
+.sideBar header img {
+  width: 150px;
+}
+
+.sideBar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem 0;
+}
+
+.sideBar nav a,
+.sideBar footer a {
+  display: flex;
+  font-size: 1.1rem;
+  align-items: center;
+  color: black;
+  gap: 0 0.5rem;
+}
+
+.sideBar footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem 0;
+}

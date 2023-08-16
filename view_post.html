@@ -16,11 +16,11 @@
     integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <title>OBB Radio</title>
-  <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/sideBar.css">
   <link rel="stylesheet" href="css/panel.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/component.css">
+  <link rel="stylesheet" href="css/view_post.css">
   <script>
     const setMaxHeight = () => {
       const vh = window.innerHeight * 0.01;
@@ -89,35 +89,6 @@
       </footer>
     </section>
     <section class="main">
-      <section class="top_swiper swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a href="" style="background-image: url(images/Henry-Quartey-1024x544.jpg);">
-              <p>Henry Quartey fumes over filth in Accra; calls out MMDCEs</p>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="" style="background-image: url(images/image-255-1024x559.png);">
-              <p>Foreign Affairs Minister fumes, sacks overstaying officers at Passport Office over suspected extortion
-              </p>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a style="background-image: url(images/CHALE-CHALE-1.png);">
-              <p>Joy Prime, Joy FM and other MGL platforms partner Chale Wote Festival 2023</p>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a style="background-image: url(images/Colleges-of-Education.jpeg);">
-              <p>CETAG strike: Salaries can be withheld if strike is illegal – NLC clarifies</p>
-            </a>
-          </div>
-        </div>
-
-        <button class="material-symbols-outlined top_swiper_prev">chevron_left</button>
-        <button class="material-symbols-outlined top_swiper_next">chevron_right</button>
-      </section>
-
       <section class="news_box">
         <section href="" class="news">
           <p>
@@ -143,6 +114,15 @@
             <p style="color: black;">
               The Minister of Tourism, Arts and Culture, Mohammed Awal has announced that the government will be
               launching a project to solicit novel tourism ideas from young people.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, in! Quos, ipsa molestias placeat facere adipisci, nihil culpa dicta reiciendis minus illo similique, eius vel dolor ipsum veritatis error id.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, nobis dolores quam autem obcaecati laudantium praesentium illo, rem odio similique, sit eaque doloribus doloremque iusto perspiciatis mollitia corporis veniam ipsa.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam totam explicabo, autem quod aliquid voluptatum in, suscipit officiis dolorum deleniti nulla animi debitis quisquam accusamus consequatur. Asperiores perferendis qui maiores.
+              Lorem
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, in! Quos, ipsa molestias placeat facere adipisci, nihil culpa dicta reiciendis minus illo similique, eius vel dolor ipsum veritatis error id.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, nobis dolores quam autem obcaecati laudantium praesentium illo, rem odio similique, sit eaque doloribus doloremque iusto perspiciatis mollitia corporis veniam ipsa.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam totam explicabo, autem quod aliquid voluptatum in, suscipit officiis dolorum deleniti nulla animi debitis quisquam accusamus consequatur. Asperiores perferendis qui maiores.
+              Lorem
+            
             </p>
             <nav>
               <a href="view_news.html" class="fa-brands fa-facebook-f"></a>
@@ -153,73 +133,75 @@
             </nav>
           </div>
         </section>
-        <script>
-          for (var i = 0; i < 9; i++) {
-            document.querySelector('.news_box').appendChild(document.querySelector('.news').cloneNode(true))
-          }
-        </script>
-        <script>
-          const news_box = document.querySelector('.news_box');
-          [...news_box.children].forEach((el, i) => {
-            if ((i + 1) % 2 === 1) {
-              var test_ad = document.createElement('section')
-              test_ad.classList.add('ad')
-              var parentBox = el.parentNode
-              parentBox.insertBefore(test_ad, el)
-            }
-          })
-        </script>
-
-        <section class="loader" tabindex="0">
-          <div></div>
-          <div></div>
-          <div></div>
-        </section>
-
-        <style>
-          .loader {
-            width: 100%;
-            padding: 1rem 0;
-            background: whitesmoke;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border-radius: 5px;
-            display: none;
-            gap: 0 1rem;
-          }
-
-          .loader div {
-            width: 15px;
-            height: 15px;
-            border-radius: 10px;
-            border-radius: 43% 55% 52% 50% / 55% 50% 49% 47%;
-            background: rgb(58, 58, 58);
-          }
-        </style>
-
-        <script>
-          const loader = document.querySelector('.loader')
-          const loaderAnime =
-            anime({
-              begin : ()=>{
-                loader.style.display = 'flex';
-                // loader.focus();
-              },
-              loop: true,
-              targets: '.loader div',
-              opacity: [0, 1],
-              scale: [0.5, 1],
-            })
-
-          loaderAnime.pause()
-
-          window.onclick = () => {
-            loaderAnime.play()
-          }
-        </script>
-
       </section>
+
+      <section class="ad"></section>
+
+      <section class="related_box">
+        <h3>Related Topics</h3>
+        <section class="relateds">
+          <a href="" class="mini_news">
+            <img src="images/image-255-1024x559.png" alt="">
+            <small>
+              Raphael Kumah files to contest Bole-Bamboi NPP primary; pledges to focus on women empowerment
+            </small>
+          </a>
+        </section>
+      </section>
+
+      <script>
+        for (var i = 0; i < 3; i++) {
+          document.querySelector('.relateds').appendChild(document.querySelector('.mini_news').cloneNode(true))
+        }
+      </script>
+
+      <style>
+        .main{
+          align-items: center;
+        }
+        .related_box{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem 0;
+        }
+        .related_box h3{
+          font-size: 1.3rem;
+          font-weight: 400;
+          border-bottom: 2px solid darkgray
+        }
+        .relateds{
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(2,1fr);
+          gap: 2rem;
+        }
+        .mini_news{
+          display: flex;
+          flex-direction: column;
+          gap: 1rem 0;
+          border: 1px solid darkgray;
+          padding: 10px;
+          border-radius: 10px;
+          color: black;
+        }
+        .mini_news img{
+          width: 100%;
+          border-radius: 10px 10px 0 0;
+          border-radius: 10px;
+          height: 150px;
+          aspect-ratio: 4/3;
+          object-fit: cover;
+        }
+
+        @media all and (max-width:500px){
+          .relateds{
+            grid-template-columns: 1fr;
+          }
+        }
+      </style>
+
     </section>
     <section class="panel">
       <section class="players">
@@ -256,85 +238,4 @@
 </body>
 
 <script src="js/component.js"></script>
-<script>
-  document.querySelector('.news').onclick = () => {
-    window.location.href = 'view_post.html'
-  }
-
-
-  document.querySelectorAll('.news video').forEach((el, i) => {
-    el.onplay = () => {
-      document.querySelectorAll('.news video').forEach((bel, ii) => {
-        if (i != ii) {
-          bel.pause()
-        }
-      })
-    }
-  })
-</script>
-
-<script>
-  const top_swiper_next = document.querySelector('.top_swiper_next')
-  const top_swiper_prev = document.querySelector('.top_swiper_prev')
-
-  const makeTopSwiper = (min) => {
-    var top_swiper = new Swiper('.top_swiper', {
-      loop: false,
-      slidesPerView: 2,
-      spaceBetween: 20,
-      navigation: {
-        nextEl: top_swiper_next,
-        prevEl: top_swiper_prev
-      }
-    })
-  }
-  makeTopSwiper()
-
-  document.querySelector('.top_swiper').onmouseenter = () => {
-    top_swiper_next.classList.add('change')
-    top_swiper_prev.classList.add('change')
-  }
-  document.querySelector('.top_swiper').onmouseleave = () => {
-    top_swiper_next.classList.remove('change')
-    top_swiper_prev.classList.remove('change')
-  }
-</script>
-
-<script>
-  const page = document.querySelector('.page')
-
-
-  const handleScrolls = () => {
-    if (window.innerWidth > 650) {
-      window.onscroll = () => {
-        checkWindowEnd()
-      }
-    } else {
-      page.onscroll = () => {
-        checkPageEnd()
-      };
-    }
-  }
-  handleScrolls()
-
-
-  const checkWindowEnd = () => {
-    const documentHeight = document.documentElement.scrollHeight;
-    const viewportHeight = window.innerHeight;
-    const scrollPosition = window.scrollY || window.pageYOffset;
-
-    if (scrollPosition + viewportHeight >= documentHeight) {
-      console.log("Window end reached!");
-    }
-  }
-
-  const checkPageEnd = () => {
-    const divHeight = page.scrollHeight;
-    const divScrollPosition = page.scrollTop;
-
-    if (divScrollPosition + page.clientHeight >= divHeight) {
-      console.log("Div end reached!");
-    }
-  }
-</script>
 </html>
