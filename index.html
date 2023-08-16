@@ -805,7 +805,7 @@
     .page {
       margin: 0;
       padding: 0;
-      height: calc(50vh - 60px);
+      height: calc( var(--screen)  - 75px);
       overflow: auto;
       width: 100%;
     }
@@ -814,22 +814,24 @@
       width: 80%;
       padding: 3vh 7.5%;
       margin: 0 2.5%;
-      /* padding: 0; */
-      /* height: 100vh; */
-      height: calc(var(--screen) - 6.5vh - 68px);
+      height: calc(var(--screen) - 6.8vh - 70px);
       max-height: 100vh;
-      left: 0;
+      left: -100%;
       top: revert;
-      bottom: -100%;
+      bottom: 70px;
       transition: 0.5s ease;
       border-radius: 0;
       border-radius: 10px;
     }
+    .sideBar header img{
+      width: 100px;
+    }
+    .sideBar nav a, .sideBar footer a{
+      font-size: 0.85rem;
+    }
 
     .sideBar.change {
       left: 0;
-      bottom: 0;
-      bottom: 68px;
     }
 
     .main {
