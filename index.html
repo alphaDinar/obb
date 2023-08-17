@@ -41,21 +41,9 @@
 <body>
 
   <section class="mobile_nav">
-
+    <img src="images/logo_2.png" alt="">
+    <span>OBUOBA FM</span>
   </section>
-
-  <style>
-    .mobile_nav{
-    width: 90%;
-    width: 100%;
-    padding: 5px 0;
-    height: 50px;
-    z-index: 1000;
-    /* border-radius: 10px; */
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    background: black;
-    }
-  </style>
 
   <section class="top_nav">
     <button class="material-symbols-outlined" style="cursor: pointer;" onclick="toggleSideBar()">menu</button>
@@ -194,28 +182,6 @@
           <div></div>
         </section>
 
-        <style>
-          .loader {
-            width: 100%;
-            padding: 1rem 0;
-            background: whitesmoke;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border-radius: 5px;
-            display: none;
-            gap: 0 1rem;
-          }
-
-          .loader div {
-            width: 15px;
-            height: 15px;
-            border-radius: 10px;
-            border-radius: 43% 55% 52% 50% / 55% 50% 49% 47%;
-            background: rgb(58, 58, 58);
-          }
-        </style>
-
         <script>
           const loader = document.querySelector('.loader')
           const loaderAnime =
@@ -241,7 +207,7 @@
     <section class="panel">
       <section class="players">
         <section class="player_box">
-          <img src="images/dj-wallpaper-the-vibe-mix-4.jpg" alt="">
+          <img src="images/radio.jpg" alt="">
 
           <nav>
             <p><i class="material-symbols-outlined">radio</i> <span>Sunday Jams</span></p>
@@ -298,7 +264,7 @@
     var top_swiper = new Swiper('.top_swiper', {
       loop: false,
       slidesPerView: 2,
-      spaceBetween: 20,
+      spaceBetween: 10,
       navigation: {
         nextEl: top_swiper_next,
         prevEl: top_swiper_prev

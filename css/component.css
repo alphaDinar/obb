@@ -16,7 +16,7 @@
   align-items: center;
   border-radius: 0 0 10px 10px;
   color: white;
-  background: #263b88;
+  background: var(--var-bg);
 }
 
 .top_nav button:nth-child(1) {
@@ -50,7 +50,7 @@
   padding: 0 15px;
   border-radius: 10px;
   align-items: center;
-  color: #243c87;
+  color: var(--var-bg);
 }
 
 .top_nav .player p {
@@ -99,6 +99,7 @@
   border-radius: 20px;
   transition: 0.4s ease;
 }
+
 .news p {
   width: 100%;
   color: rgb(88, 88, 88);
@@ -119,6 +120,7 @@
   font-weight: 400;
   font-size: 1.2rem;
 }
+
 .news .tag_box {
   color: rgb(107, 107, 107);
   display: flex;
@@ -133,7 +135,8 @@
   width: 100%;
 }
 
-.news .img_box img, .news .img_box video {
+.news .img_box img,
+.news .img_box video {
   width: 100%;
   border-radius: 8px;
 }
@@ -163,6 +166,29 @@
   background-size: cover;
 }
 
+.mobile_nav {
+  width: 90%;
+  padding: 5px 5%;
+  height: 40px;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  gap: 0 1rem;
+  background: var(--var-bg);
+}
+
+.mobile_nav img {
+  height: 40px;
+  background: white;
+  border-radius: 5px;
+}
+
+.mobile_nav span {
+  font-size: 1.5rem;
+  color: white;
+  letter-spacing: 1px;
+}
+
 #playlist {
   position: fixed;
   bottom: 85px;
@@ -176,6 +202,26 @@
   color: white;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   display: none;
+}
+
+.loader {
+  width: 100%;
+  padding: 1rem 0;
+  background: whitesmoke;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 5px;
+  display: none;
+  gap: 0 1rem;
+}
+
+.loader div {
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  border-radius: 43% 55% 52% 50% / 55% 50% 49% 47%;
+  background: rgb(58, 58, 58);
 }
 
 @media all and (max-width:1700px) {
@@ -228,7 +274,7 @@
   .sideBar {
     position: fixed;
     opacity: 1;
-    background: #263b88;
+    background: var(--var-bg);
     color: white;
     z-index: 1000;
     width: 200px;
@@ -273,7 +319,7 @@
     position: fixed;
     max-height: calc(100vh - 100px);
     overflow-y: auto;
-    background-color: #243c87;
+    background-color: var(--var-bg);
     border-radius: 0 15px 15px 0;
     z-index: 1000;
     left: 0;
@@ -330,7 +376,7 @@
   .page {
     margin: 0;
     padding: 0;
-    height: calc(var(--screen) - 120px);
+    height: calc(var(--screen) - 115px);
     overflow: auto;
     width: 100%;
   }
@@ -374,12 +420,17 @@
   .news P {
     font-size: 0.8rem;
   }
+
+  .mobile_nav {
+    display: flex;
+  }
 }
 
 @media all and (max-width:550px) {
   .news h3 {
     font-size: 1.1rem;
   }
+
   .ad {
     width: 80%;
     object-fit: cover;

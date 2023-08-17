@@ -65,7 +65,7 @@
   height: 25px;
   width: 5px;
   border-radius: 100px;
-  background: #243c87;
+  background: var(--var-bg);
 }
 
 .player_box h4 {
@@ -79,4 +79,4 @@
   font-weight: 400;
 }
 
-@media all and (max-width:1200px) {
+/* @media all and (max-width:1200px) { */

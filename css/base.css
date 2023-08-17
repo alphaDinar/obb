@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Commissioner&family=Martel+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
@@ -16,8 +14,9 @@
   scroll-behavior: smooth;
 }
 
-:root {
-  --var-color: white;
+
+:root{
+  --var-bg : #2b3a6a;
 }
 
 .page {
