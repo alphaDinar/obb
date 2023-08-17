@@ -331,7 +331,7 @@
     margin: 0;
     margin-top: 60px;
     padding: 0;
-    height: calc(var(--screen) - 60px);
+    height: calc(var(--screen) - 120px);
     overflow: auto;
     width: 100%;
   }
