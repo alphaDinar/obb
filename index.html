@@ -39,6 +39,29 @@
 </head>
 
 <body>
+
+  <section class="mobile_nav">
+
+  </section>
+
+  <style>
+    .mobile_nav{
+      /* bottom: 5px; */
+    width: 90%;
+    width: 100%;
+    /* padding: 0 3% 5px 3%; */
+    /* margin: 0 2%; */
+    position: fixed;
+    padding: 5px 0;
+    top: 0px;
+    height: 50px;
+    z-index: 1000;
+    /* border-radius: 10px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background: black;
+    }
+  </style>
+
   <section class="top_nav">
     <button class="material-symbols-outlined" style="cursor: pointer;" onclick="toggleSideBar()">menu</button>
     <div class="left">
@@ -161,7 +184,7 @@
         <script>
           const news_box = document.querySelector('.news_box');
           [...news_box.children].forEach((el, i) => {
-            if ((i + 1) % 2 === 1) {
+            if ((i + 1) % 3 === 0) {
               var test_ad = document.createElement('section')
               test_ad.classList.add('ad')
               var parentBox = el.parentNode
@@ -204,7 +227,6 @@
             anime({
               begin: () => {
                 loader.style.display = 'flex';
-                // loader.focus();
               },
               loop: true,
               targets: '.loader div',
@@ -212,7 +234,7 @@
               scale: [0.5, 1],
             })
 
-          loaderAnime.pause()
+          // loaderAnime.pause()
 
           window.onclick = () => {
             loaderAnime.play()
