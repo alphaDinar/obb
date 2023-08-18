@@ -42,11 +42,11 @@ section::-webkit-scrollbar-thumb {
   div::-webkit-scrollbar,
   section::-webkit-scrollbar {
     background: transparent;
-    width: 5px;
+    width: 0;
   }
 
   section::-webkit-scrollbar-thumb {
     background: transparent;
-    border-radius: 100px;
+    width: 0;
   }
 }

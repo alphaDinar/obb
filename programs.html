@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/eb75260fb3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+    integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+    integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>OBB Radio</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="manager.css">
+  <link rel="stylesheet" href="manager_ex.css">
+  <link rel="stylesheet" href="manager_form.css">
+</head>
+
+<body>
+  <section class="page">
+    <section class="sideBar">
+      <button class="material-symbols-outlined" onclick="toggleSideBar()" style="cursor: pointer;">linear_scale</button>
+
+      <header>
+        <img src="images/logo_2.png" alt="">
+      </header>
+
+      <nav>
+        <a href=""><i class="material-symbols-outlined">mic</i> <span>Programs</span></a>
+        <a href="posts.html"><i class="material-symbols-outlined">post_add</i> <span>Posts</span></a>
+        <a href=""><i class="material-symbols-outlined">group</i> <span>Team</span></a>
+      </nav>
+
+      <footer>
+        <a href=""><i class="material-symbols-outlined">power_settings_new</i> <span>Logout</span></a>
+      </footer>
+
+    </section>
+    <section class="main">
+      <header>
+        <select>
+          <option value="">All</option>
+        </select>
+        <strong>Programs</strong>
+        <input type="text" placeholder="Search Program">
+      </header>
+
+      <section class="day_box_holder"></section>
+      <style>
+        .programs {
+          flex-wrap: wrap;
+        }
+      </style>
+
+      <script>
+        const day_box_holder = document.querySelector('.day_box_holder')
+        const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const py_days = [6, 0, 1, 2, 3, 4, 5]
+        const daySelect = document.querySelector('header select')
+
+        daysOfWeek.forEach((day, i) => {
+          day_box_holder.innerHTML += `
+          <section class="day_box" data-day="${i}">
+          <h3>${daysOfWeek[i]}</h3>
+          <section class="list_box" data-day="${i}">
+            <div class="add_program material-symbols-outlined" onclick="openForm(${i})">add</div>
+          </section>
+        </section>
+          `
+          daySelect.innerHTML += `
+            <option value='${i}'>${daysOfWeek[i]}</option>
+          `
+        })
+
+        for (var i = 0; i < 8; i++) {
+          document.querySelector('.programs').appendChild(document.querySelector('.program').cloneNode(true))
+        }
+      </script>
+    </section>
+    <section class="form_cover">
+      <form action="" method="post">
+        <button type="button" class="material-symbols-outlined" onclick="closeForm()">close</button>
+        <strong></strong>
+        <div>
+          <span>Title *</span>
+          <input type="text" name="title" required>
+        </div>
+        <div>
+          <span>Description *</span>
+          <textarea name="description" required></textarea>
+        </div>
+        <div>
+          <span>Dj</span>
+          <input type="text" name="dj">
+        </div>
+        <div>
+          <span>Image</span>
+          <div class="img_box">
+            <label for="add_image">
+              <i class="material-symbols-outlined">add_a_photo</i>
+              <input id="add_image" onchange="addImage(event.target, event.target.parentElement.parentElement)"
+                name="image" type="file" accept="image/*" style="height: 1px; width: 1px;" required>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          From:
+          <input type="time" name="start_time">
+          To:
+          <input type="time" name="end_time">
+        </div>
+
+        <script>
+          const addImage = (el, el_p) => {
+            const [file] = el.files
+            var src = URL.createObjectURL(file)
+            el_p.style.backgroundImage = `url(${src})`
+          }
+        </script>
+
+        <button type="submit">Done</button>
+      </form>
+    </section>
+
+
+    <style>
+      .form_cover form textarea {
+        height: 100px;
+      }
+    </style>
+  </section>
+
+
+
+  <script>
+    const sideBar = document.querySelector('.sideBar')
+    const main = document.querySelector('.main')
+    const form_cover = document.querySelector('.form_cover')
+
+    const toggleSideBar = () => {
+      sideBar.classList.toggle('change')
+      main.classList.toggle('change')
+      if (form_cover) {
+        form_cover.classList.toggle('change')
+      }
+    }
+
+
+    const form_day = document.querySelector('form strong')
+    const program_form = document.querySelector('form')
+
+    // console.log(program_form)
+
+    const openForm = (day) => {
+      form_day.innerHTML = daysOfWeek[day]
+      
+      form_cover.classList.add('show')
+    }
+    const closeForm = () => {
+      // form_day.innerHTML = ''
+      form_cover.classList.remove('show')
+      form_cover.ontransitionend = () => {
+        program_form.reset()
+      }
+    }
+    // window.addEventListener('DOMContentLoaded', ()=>{
+    //   console.log('me')
+    // })
+
+    // window.onload =()=>{
+    //   console.log('uuuu')
+    // }
+  </script>
+</body>
+
+</html>

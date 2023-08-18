@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/eb75260fb3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+    integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+    integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>OBB Radio</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="manager.css">
+</head>
+
+<body>
+  <section class="page">
+    <section class="sideBar">
+      <button class="material-symbols-outlined" onclick="toggleSideBar()" style="cursor: pointer;">linear_scale</button>
+
+      <header>
+        <img src="images/logo_2.png" alt="">
+      </header>
+
+      <nav>
+        <a href="programs.html"><i class="material-symbols-outlined">mic</i> <span>Programs</span></a>
+        <a href=""><i class="material-symbols-outlined">post_add</i> <span>Posts</span></a>
+        <a href=""><i class="material-symbols-outlined">group</i> <span>Team</span></a>
+      </nav>
+
+      <footer>
+        <a href=""><i class="material-symbols-outlined">power_settings_new</i> <span>Logout</span></a>
+      </footer>
+
+    </section>
+    <section class="main">
+      <section class="team_box">
+        <h3>Team</h3>
+        <section class="teams">
+          <div class="team"></div>
+          <script>
+            for (var i = 0; i < 7; i++) {
+              document.querySelector('.teams').appendChild(document.querySelector('.team').cloneNode(true))
+            }
+          </script>
+        </section>
+      </section>
+
+      <style>
+        .team_box {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem 0;
+        }
+
+        .teams {
+          width: 100%;
+          display: flex;
+          gap: 0 2rem;
+          overflow-x: auto;
+        }
+
+        .team {
+          min-width: 80px;
+          min-height: 80px;
+          border-radius: 50%;
+          margin: 10px 0;
+          background-image: url(images/radio.jpg);
+          background-position: center;
+          background-size: cover;
+        }
+      </style>
+
+      <section class="program_box">
+        <h3>Upcoming Programs</h3>
+        <button class="next_program material-symbols-outlined">chevron_right</button>
+        <button class="prev_program material-symbols-outlined">chevron_left</button>
+        <section class="programs">
+
+          <div class="program">
+            <img src="images/dj-wallpaper-the-vibe-mix-4.jpg" alt="">
+            <p>
+              <span><i class="material-symbols-outlined">mic</i> <small>Morning Show</small></span>
+              <span><i class="material-symbols-outlined">calendar_month</i> <small>Monday's</small></span>
+              <span><i class="material-symbols-outlined">schedule</i> <small>8:00 - 10:00</small></span>
+            </p>
+          </div>
+        </section>
+      </section>
+
+      <section class="post_box">
+        <h3>Posts</h3>
+        <button class="next_post material-symbols-outlined">chevron_right</button>
+        <button class="prev_post material-symbols-outlined">chevron_left</button>
+        <section class="posts">
+          <div class="post">
+            <img src="images/Henry-Quartey-1024x544.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus commodi, aut aperiam quod consequatur
+              dolores fuga nulla laboriosam, quae, dignissimos odio quisquam illo rem quis. Commodi mollitia impedit
+              enim iusto!</p>
+            <small>3 mins ago</small>
+          </div>
+        </section>
+      </section>
+
+    </section>
+  </section>
+
+  <script>
+    const sideBar = document.querySelector('.sideBar')
+    const main = document.querySelector('.main')
+
+    const toggleSideBar = () => {
+      sideBar.classList.toggle('change')
+      main.classList.toggle('change')
+    }
+  </script>
+  <script>
+    for (var i = 0; i < 4; i++) {
+      document.querySelector('.programs').appendChild(document.querySelector('.program').cloneNode(true))
+    }
+    const programs = document.querySelector('.programs')
+    const posts = document.querySelector('.posts')
+
+    document.querySelector('.next_program').onclick = () => {
+      programs.scrollLeft += 700;
+    }
+    document.querySelector('.prev_program').onclick = () => {
+      programs.scrollLeft -= 700;
+    }
+
+    document.querySelector('.next_post').onclick = () => {
+      posts.scrollLeft += 700;
+    }
+    document.querySelector('.prev_post').onclick = () => {
+      posts.scrollLeft -= 700;
+    }
+
+    for (var i = 0; i < 4; i++) {
+      document.querySelector('.posts').appendChild(document.querySelector('.post').cloneNode(true))
+    }
+  </script>
+</body>
+
+</html>
