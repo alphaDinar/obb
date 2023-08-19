@@ -1,39 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<section class="prompt_box">
+  <span>
+    Are you sure you want to delete
+    <i>Morning Show</i>
+  </span>
+  <nav>
+    <button>yes</button>
+    <button>no</button>
+  </nav>
+</section>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/base.css">
-</head>
+<style>
+  .prompt_box {
+    width: 280px;
+    padding: 10px;
+    height: 180px;
+    position: fixed;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 0;
+    right: -300px;
+    z-index: 1000;
+    gap: 1rem 0;
+    border-radius: 0 0 0 20px;
+    transition: 0.4s ease;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
 
-<body>
-  <section class="page">
+  .prompt_box.show {
+    right: 0;
+  }
 
-  </section>
+  .prompt_box i {
+    font-style: normal;
+    font-weight: 600;
+    color: salmon;
+  }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      border: none;
-      outline: none;
-      text-decoration: none;
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-    }
+  .prompt_box nav button {
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    width: 40px;
+  }
 
-    .page {
-      background: salmon;
-      width: 100%;
-      height: calc(var(--vh, 1vh) * 100 - (env(safe-area-inset-top) + env(safe-area-inset-bottom)));
-      overflow-y: auto;
-    }
-  </style>
+  .prompt_box nav button:nth-child(1) {
+    background: rgb(35, 214, 124);
+  }
 
-
-
-</body>
-
-</html>
+  .prompt_box nav button:nth-child(2) {
+    background: tomato;
+  }
+</style>

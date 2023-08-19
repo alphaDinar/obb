@@ -26,7 +26,7 @@
 
 .player_box img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
   border-radius: 5px 5px 0 0;
 }
@@ -52,7 +52,7 @@
   font-size: 2rem;
 }
 
-.player_box .bars {
+.bars {
   position: absolute;
   display: flex;
   bottom: 10px;
@@ -60,7 +60,7 @@
   gap: 0 1px;
 }
 
-.player_box .bars small {
+.bars small {
   display: block;
   height: 25px;
   width: 5px;

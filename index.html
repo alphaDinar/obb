@@ -39,7 +39,6 @@
 </head>
 
 <body>
-
   <section class="mobile_nav">
     <img src="images/logo_2.png" alt="">
     <span>OBUOBA FM</span>
@@ -95,6 +94,35 @@
       </footer>
     </section>
     <section class="main">
+      <section class="main_player">
+        <div class="card">
+          <i id="tag">On Air</i>
+          <img src="images/test4.jpeg" alt="">
+          <p>
+            <span><i class="material-symbols-outlined">mic</i> <small>Sunday Jams</small></span>
+            <span><i class="material-symbols-outlined">schedule</i> <small>8:00 - 10:00</small></span>
+            <button class="material-symbols-outlined">play_arrow</button>
+          </p>
+          <div class="bars">
+            <small></small>
+            <small></small>
+            <small></small>
+            <small></small>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider">
+        <span>News Updates</span>
+        <hr style="width: 100%; border-top: 2px solid darkgray;">
+      </div>
+
+      <style>
+        .divider{
+          font-size: 1.3rem;
+        }
+      </style>
+
       <section class="top_swiper swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -195,7 +223,6 @@
               scale: [0.5, 1],
             })
 
-          // loaderAnime.pause()
 
           window.onclick = () => {
             loaderAnime.play()
@@ -207,8 +234,8 @@
     <section class="panel">
       <section class="players">
         <section class="player_box">
-          <h4>Now Playing</h4>
-          <img src="images/radio.jpg" alt="">
+          <h4>On Air</h4>
+          <img src="images/test4.jpeg" alt="">
 
           <nav>
             <p><i class="material-symbols-outlined">radio</i> <span>Sunday Jams</span></p>

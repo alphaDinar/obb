@@ -173,6 +173,7 @@
   z-index: 1000;
   display: none;
   align-items: center;
+  justify-content: flex-end;
   gap: 0 1rem;
   background: var(--var-bg);
 }
